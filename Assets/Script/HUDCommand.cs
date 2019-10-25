@@ -36,15 +36,26 @@ public class HUDCommand : MonoBehaviour
 
     public void FeedRock()
     {
+        if (Rock != null)
         Rock.GetComponent<RockController>().hunger += 2;
     }
     public void PlayWithRock()
     {
+        if (Rock != null)
         Rock.GetComponent<RockController>().friendship += 2;
     }
 
     public void Vet()
     {
+        if (Rock != null)
         Rock.GetComponent<RockController>().IsSick = false;
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.LogError("Game Quit");
+    }
 }
+
+
